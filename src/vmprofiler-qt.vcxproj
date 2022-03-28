@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A0485AE3-1965-4BE3-A2C4-A8257337C271}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.19041.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.19041.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>5.15.1</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>5.15.1</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);;$(ProjectDir)..\dependencies\vmprofiler\include</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <IncludePath>G:\Qt\5.15.1\msvc2019_64\include;$(ProjectDir);$(ProjectDir)DarkStyle\framelesswindow\;$(ProjectDir)DarkStyle;$(IncludePath);$(ProjectDir)..\dependencies\vmprofiler\include;$(ProjectDir)..\dependencies\vmprofiler\dependencies\zydis\include;$(ProjectDir)..\dependencies\vmprofiler\dependencies\zydis\dependencies\zycore\include;$(ProjectDir)..\dependencies\vmprofiler\dependencies\zydis\msvc</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(ProjectDir)..\libs\*;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <QtRcc Include="DarkStyle\darkstyle.qrc" />
+    <QtRcc Include="DarkStyle\framelesswindow.qrc" />
+    <QtRcc Include="QVMProfiler.qrc" />
+    <QtUic Include="DarkStyle\framelesswindow\framelesswindow.ui" />
+    <QtUic Include="QVMProfiler.ui" />
+    <QtMoc Include="QVMProfiler.h" />
+    <ClCompile Include="DarkStyle\DarkStyle.cpp" />
+    <ClCompile Include="DarkStyle\framelesswindow\framelesswindow.cpp" />
+    <ClCompile Include="DarkStyle\framelesswindow\windowdragger.cpp" />
+    <ClCompile Include="QVMProfiler.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="DarkStyle\DarkStyle.h" />
+    <QtMoc Include="DarkStyle\framelesswindow\windowdragger.h" />
+    <QtMoc Include="DarkStyle\framelesswindow\framelesswindow.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\dependencies\zycore\include\Zycore\Allocator.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\dependencies\zycore\include\Zycore\API\Memory.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\dependencies\zycore\include\Zycore\API\Synchronization.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\dependencies\zycore\include\Zycore\API\Terminal.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\dependencies\zycore\include\Zycore\API\Thread.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\dependencies\zycore\include\Zycore\ArgParse.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\dependencies\zycore\include\Zycore\Bitset.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\dependencies\zycore\include\Zycore\Comparison.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\dependencies\zycore\include\Zycore\Defines.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\dependencies\zycore\include\Zycore\Format.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\dependencies\zycore\include\Zycore\LibC.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\dependencies\zycore\include\Zycore\List.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\dependencies\zycore\include\Zycore\Object.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\dependencies\zycore\include\Zycore\Status.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\dependencies\zycore\include\Zycore\String.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\dependencies\zycore\include\Zycore\Types.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\dependencies\zycore\include\Zycore\Vector.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\dependencies\zycore\include\Zycore\Zycore.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\Decoder.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\DecoderTypes.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\Formatter.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\FormatterBuffer.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\Generated\EnumInstructionCategory.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\Generated\EnumISAExt.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\Generated\EnumISASet.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\Generated\EnumMnemonic.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\Generated\EnumRegister.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\Internal\DecoderData.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\Internal\FormatterATT.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\Internal\FormatterBase.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\Internal\FormatterIntel.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\Internal\SharedData.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\Internal\String.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\MetaInfo.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\Mnemonic.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\Register.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\SharedTypes.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\ShortString.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\Status.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\Utils.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\include\Zydis\Zydis.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\msvc\ZycoreExportConfig.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\dependencies\zydis\msvc\ZydisExportConfig.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\include\transform.hpp" />
+    <ClInclude Include="..\dependencies\vmprofiler\include\vm.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\include\vmctx.h" />
+    <ClInclude Include="..\dependencies\vmprofiler\include\vmp2.hpp" />
+    <ClInclude Include="..\dependencies\vmprofiler\include\vmprofiler.hpp" />
+    <ClInclude Include="..\dependencies\vmprofiler\include\vmutils.h" />
+    <ClInclude Include="ia32.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dependencies\vmprofiler\dependencies\zydis\msvc\zydis\Zydis.vcxproj">
+      <Project>{88a23124-5640-35a0-b890-311d7a67a7d2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\dependencies\vmprofiler\src\vmprofiler.vcxproj">
+      <Project>{d0b6092a-9944-4f24-9486-4b7dae372619}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QVMProfilerClass</class>
+ <widget class="QMainWindow" name="QVMProfilerClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1220</width>
+    <height>1038</height>
+   </rect>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>VMProfiler</string>
+  </property>
+  <property name="toolTipDuration">
+   <number>0</number>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_6">
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="acceptDrops">
+       <bool>false</bool>
+      </property>
+      <property name="title">
+       <string>Virutal CPU Trace Information</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>Virtual Instructions</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QScrollArea" name="scrollArea">
+            <property name="widgetResizable">
+             <bool>true</bool>
+            </property>
+            <widget class="QWidget" name="scrollAreaWidgetContents">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>556</width>
+               <height>777</height>
+              </rect>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <item>
+               <widget class="QTreeWidget" name="VirtualInstructionTree">
+                <attribute name="headerDefaultSectionSize">
+                 <number>120</number>
+                </attribute>
+                <column>
+                 <property name="text">
+                  <string>Address</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Operands</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Virtual Instruction</string>
+                 </property>
+                </column>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QGroupBox" name="groupBox_3">
+            <property name="title">
+             <string>Registers</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QTreeWidget" name="VirtualRegisterTree">
+               <attribute name="headerDefaultSectionSize">
+                <number>65</number>
+               </attribute>
+               <column>
+                <property name="text">
+                 <string>Register</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Value</string>
+                </property>
+               </column>
+               <item>
+                <property name="text">
+                 <string>VIP</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>VSP</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>DKEY</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string/>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg0</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg1</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg2</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg3</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg4</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg5</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg6</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg7</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg8</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg9</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg10</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg11</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg12</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg13</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg14</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg15</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg16</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg17</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg18</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg19</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg20</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg21</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg22</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>vreg23</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTreeWidget" name="NativeRegisterTree">
+               <attribute name="headerDefaultSectionSize">
+                <number>70</number>
+               </attribute>
+               <column>
+                <property name="text">
+                 <string>Register</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Value</string>
+                </property>
+               </column>
+               <item>
+                <property name="text">
+                 <string>R15</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>R14</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>R13</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>R12</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>R11</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>R10</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>R9</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>R8</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>RBP</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>RDI</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>RSI</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>RDX</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>RCX</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>RBX</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>RAX</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string/>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>RFLAGS</string>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>ZF</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>PF</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>AF</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>OF</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>SF</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>DF</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>CF</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>TF</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>IF</string>
+                 </property>
+                </item>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_4">
+            <property name="title">
+             <string>Virtual Stack</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QScrollArea" name="scrollArea_3">
+               <property name="widgetResizable">
+                <bool>true</bool>
+               </property>
+               <widget class="QWidget" name="scrollAreaWidgetContents_3">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>0</y>
+                  <width>556</width>
+                  <height>225</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_3">
+                 <item>
+                  <widget class="QTreeWidget" name="VirtualStackTree">
+                   <column>
+                    <property name="text">
+                     <string>Stack Pointer</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Value</string>
+                    </property>
+                   </column>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_5">
+            <property name="title">
+             <string>Virtual Machine Instruction Handler</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="QGroupBox" name="groupBox_6">
+               <property name="title">
+                <string>VM Handler Instructions</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_8">
+                <item>
+                 <widget class="QTreeWidget" name="VMHandlerInstructionsTree">
+                  <column>
+                   <property name="text">
+                    <string>Address</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Instruction</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="groupBox_7">
+               <property name="title">
+                <string>VM Handler Transformations</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_9">
+                <item>
+                 <widget class="QTreeWidget" name="VMHandlerTransformationsTree">
+                  <column>
+                   <property name="text">
+                    <string>Address</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Instruction</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1220</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuOpen_VMTrace">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen_VMTrace"/>
+    <addaction name="actionCloseProgram"/>
+   </widget>
+   <addaction name="menuOpen_VMTrace"/>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget">
+   <property name="minimumSize">
+    <size>
+     <width>89</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>524287</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="baseSize">
+    <size>
+     <width>89</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>Debug Log</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout_7">
+     <item>
+      <widget class="QPlainTextEdit" name="DbgOutputWindow">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="actionOpen_VMTrace">
+   <property name="text">
+    <string>Open Trace</string>
+   </property>
+  </action>
+  <action name="actionCloseProgram">
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="QVMProfiler.qrc"/>
+ </resources>
+ <connections/>
+</ui>
